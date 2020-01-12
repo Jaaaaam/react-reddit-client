@@ -54,6 +54,7 @@ function App() {
               setAfter={setAfter}
               posts={posts}
               setIsLoading={setIsLoading}
+              activeMenu={activeMenu}
               />
           </Fragment>
         }

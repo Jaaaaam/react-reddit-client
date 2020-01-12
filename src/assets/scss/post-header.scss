@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 .post-header {
   display: flex;
   font-size: 12px;
@@ -10,5 +12,17 @@
     border-right: 1px solid black;
     margin: 0 15px;
     padding: 0 10px;
+  }
+  .upvotes {
+    position: absolute;
+    right: 0px;
+    color: $orange;
+    font-size: 20px;
+    margin: 0 20px;
+    .icon-upvote {
+      color: lighten($color: $orange, $amount: 30%);
+      padding: 0px 10px;
+      
+    }
   }
 }

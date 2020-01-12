@@ -15,7 +15,6 @@ function Posts({posts, r, ...rest}) {
     await r.getSubmission(id).fetch().then((post) => {
       setActivePost({...post, authorName: name, commentCount})
       setIsLoading(false)
-      console.log(post, 'POST');
     });
   }
 
@@ -29,7 +28,7 @@ function Posts({posts, r, ...rest}) {
   }
 
   const renderPreview = (thumbnail) => {
-    const image = !(thumbnail==='self' || thumbnail==='default') ? thumbnail: placeholder
+    const image = !(thumbnail==='self' || thumbnail==='default' || thumbnail==='nsfw') ? thumbnail: placeholder
     return (
       <img src={image} height={70} />
     )
@@ -37,11 +36,12 @@ function Posts({posts, r, ...rest}) {
 
   const renderPosts = () => {
     return (
-      posts.map(({id, title, thumbnail, subreddit_name_prefixed, num_comments, permalink, created, author: {name}}) =>
+      posts.map(({id, title, thumbnail, subreddit_name_prefixed, num_comments, ups,permalink, created, author: {name}}) =>
         (
           <div className="post" key={id}>
             <PostHeader 
               created={created}
+              ups={ups}
               category={subreddit_name_prefixed }
               authorName={name} />
             <div className="post-body">
