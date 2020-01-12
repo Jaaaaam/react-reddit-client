@@ -37,10 +37,11 @@ function Posts({posts, r, ...rest}) {
 
   const renderPosts = () => {
     return (
-      posts.map(({id, title, thumbnail, subreddit_name_prefixed, num_comments, permalink, author: {name}}) =>
+      posts.map(({id, title, thumbnail, subreddit_name_prefixed, num_comments, permalink, created, author: {name}}) =>
         (
           <div className="post" key={id}>
             <PostHeader 
+              created={created}
               category={subreddit_name_prefixed }
               authorName={name} />
             <div className="post-body">

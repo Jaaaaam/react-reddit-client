@@ -35,6 +35,7 @@ function App() {
     <div className="container">
       <TopNav />
       <SideMenu 
+        r={r}
         activeMenu={activeMenu}
         setActiveMenu={setActiveMenu}
         setPosts={setPosts}

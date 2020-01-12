@@ -6,7 +6,7 @@ import PostFooter from './PostFooter';
 import Comments from './Comments';
 
 function Post({modalIsOpen, closeModal, isLoading, activePost, ...rest}) {
-  const { title, subreddit_name_prefixed, authorName, permalink, url, preview, commentCount, comments} = activePost;
+  const { title, subreddit_name_prefixed, authorName, permalink, created_utc, preview, commentCount, comments} = activePost;
   console.log(activePost, 'activePosts')
   const renderPreview = () => {
     if (!preview) return;
@@ -32,6 +32,7 @@ function Post({modalIsOpen, closeModal, isLoading, activePost, ...rest}) {
           (
             <Fragment>
               <PostHeader
+                created={created_utc}
                 category={subreddit_name_prefixed}
                 authorName={authorName} />
               <div className="post-body-title">{title}</ div>
