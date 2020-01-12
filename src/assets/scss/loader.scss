@@ -1,0 +1,48 @@
+@import './variables.scss';
+
+.wm-sending {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#wm-loading {
+  width: 100px;
+  height: 100%;
+  animation: wm-loading 3s linear infinite;
+  #loading-inner {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 300;
+    stroke-width: 10;
+    stroke-miterlimit: 10;
+    stroke-linecap: round;
+    animation: wm-loading-circle 1s linear infinite;
+    stroke: $dark-gray;
+    fill: transparent;
+  }
+}
+
+@keyframes wm-loading {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wm-loading-circle {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -600;
+  }
+}

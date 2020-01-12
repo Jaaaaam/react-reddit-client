@@ -1,0 +1,17 @@
+@import './variables.scss';
+
+.load-more-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+  .load-button {
+    margin: auto;
+    font-size: 15px;
+    padding: 10px;
+    font-weight: bold;
+    width: 140px;
+    cursor: pointer;
+    background-image: linear-gradient(to left, rgb(255, 45, 85), rgb(255, 69, 0));
+    color: $white;
+  }
+}
