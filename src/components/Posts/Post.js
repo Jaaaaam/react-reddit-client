@@ -24,7 +24,7 @@ function Post({modalIsOpen, closeModal, isLoading, activePost, ...rest}) {
       open={modalIsOpen}
       onClose={closeModal}
       styles={{
-        modal: { minWidth: '800px', minHeight: '90%'}
+        modal: { minWidth: '860px', minHeight: '90%'}
       }}
     >
       {
